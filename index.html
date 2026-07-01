@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>trops | Boardroom to Beach Lip Cosmetics</title>
+  <meta name="description" content="High-performance nude and neutral lip glosses for the ambitious woman. Longwear, high-shine, non-drying formulas that go from boardroom to beach without a touch-up.">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Ambient Palm Shadows -->
+  <div class="palm-shadow-overlay"></div>
+  <!-- Frosted Navigation -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="#" class="brand-logo" id="nav-logo">trops</a>
+      <nav class="nav-links">
+        <a href="#shade-range">The Shades</a>
+        <a href="#formula">The Formula</a>
+        <a href="#editorial">Editorial</a>
+        <a href="#reviews">Reviews</a>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-toggle-btn" id="cart-toggle-btn" aria-label="Open cart">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6z"/>
+            <path d="M3 6h18"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-count-badge" id="cart-badge">0</span>
+        </button>
+        <a href="#shade-range" class="nav-cta-btn">Shop Now</a>
+      </div>
+    </div>
+  </header>
+  <!-- Sliding Cart Drawer -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer-content">
+      <div class="cart-drawer-header">
+        <h2>Your Bag</h2>
+        <button class="close-cart-btn" id="close-cart-btn" aria-label="Close cart">&times;</button>
+      </div>
+      <div class="cart-items-container" id="cart-items-container">
+        <!-- Dynamically populated cart items -->
+        <div class="empty-cart-message">
+          <p>Your bag is currently empty.</p>
+          <a href="#shade-range" class="btn-primary select-shade-btn" id="empty-cart-shop-btn">Find Your Shade</a>
+        </div>
+      </div>
+      <div class="cart-drawer-footer" id="cart-drawer-footer">
+        <div class="cart-summary-row">
+          <span>Subtotal</span>
+          <span class="cart-subtotal" id="cart-subtotal">$0.00</span>
+        </div>
+        <p class="cart-shipping-notice">Complimentary standard shipping on all orders.</p>
+        <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-container">
+        <div class="hero-text-content">
+          <span class="hero-subtitle">Confidence in a tube</span>
+          <h1 class="hero-headline">Boardroom<br>to Beach.<br><span class="italic-serif">Same Shade</span><br>All Day.</h1>
+          <p class="hero-description">
+            High-shine product energy meets skin-first nourishment. Formulated for the ambitious, hustling woman who transitions from back-to-back client meetings to golden-hour cocktails without a single touch-up.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#shade-range" class="btn-primary hero-btn">Explore Nude Range</a>
+            <a href="#formula" class="btn-secondary hero-btn">The Hydration Formula</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image-wrapper">
+            <img src="assets/hero_product.png" alt="trops high-shine lip gloss tube on warm sand with soft palm leaf shadows" class="hero-image">
+            <div class="hero-glass-card">
+              <span class="card-tag">Featured Shade</span>
+              <h3 class="card-title">Tulum Sand</h3>
+              <p class="card-desc">Warm sand beige with a high-gloss finish. Lightweight, hydrating, bulletproof.</p>
+              <div class="card-footer">
+                <span class="card-price">$24.00</span>
+                <button class="card-add-btn quick-add-btn" data-shade="Tulum Sand" data-price="24.00">Add to Bag</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Shade Range Picker Section -->
+    <section class="shade-section" id="shade-range">
+      <div class="section-header text-center">
+        <span class="section-subtitle">The Collection</span>
+        <h2 class="section-title">Formulated in 8 Essential Nudes</h2>
+        <p class="section-description centered">
+          Carefully calibrated nude and neutral tones designed to complement all skin tones. One coat for a boardroom-ready satin look, double up for high-shine cocktail hour intensity.
+        </p>
+      </div>
+      <div class="shade-container">
+        <!-- Interactive Shade Grid -->
+        <div class="shade-picker-layout">
+          <div class="shade-grid">
+            <!-- Shade 1 -->
+            <button class="shade-card active" data-shade-id="tulum-sand">
+              <div class="swatch-circle" style="background-color: #E6C2B9;"></div>
+              <div class="shade-card-info">
+                <h3>Tulum Sand</h3>
+                <p>Warm Sand Glaze</p>
+              </div>
+              <span class="shade-card-price">$24</span>
+            </button>
+            <!-- Shade 2 -->
+            <button class="shade-card" data-shade-id="coconut-milk">
+              <div class="swatch-circle" style="background-color: #F8ECE3;"></div>
+              <div class="shade-card-info">
+                <h3>Coconut Milk</h3>
+                <p>Creamy Warm Nude</p>
+              </div>
+              <span class="shade-card-price">$24</span>
+            </button>
+            <!-- Shade 3 -->
+            <button class="shade-card" data-shade-id="shell">
+              <div class="swatch-circle" style="background-color: #EAD5D0;"></div>
+              <div class="shade-card-info">
+                <h3>Shell</h3>
+                <p>Soft Pinkish-Beige</p>
+              </div>
+              <span class="shade-card-price">$24</span>
+            </button>
+            <!-- Shade 4 -->
+            <button class="shade-card" data-shade-id="espresso-run">
+              <div class="swatch-circle" style="background-color: #5C3D31;"></div>
+              <div class="shade-card-info">
+                <h3>Espresso Run</h3>
+                <p>Deep Rich Espresso</p>
+              </div>
+              <span class="shade-card-price">$24</span>
+            </button>
+            <!-- Shade 5 -->
+            <button class="shade-card" data-shade-id="terracotta-dusk">
+              <div class="swatch-circle" style="background-color: #B56953;"></div>
+              <div class="shade-card-info">
+                <h3>Terracotta Dusk</h3>
+                <p>Warm Clay Satin</p>
+              </div>
+              <span class="shade-card-price">$24</span>
+            </button>
+            <!-- Shade 6 -->
+            <button class="shade-card" data-shade-id="golden-hour">
+              <div class="swatch-circle" style="background: linear-gradient(135deg, #DFB170 0%, #C49148 100%);"></div>
+              <div class="shade-card-info">
+                <h3>Golden Hour</h3>
+                <p>Gold-Infused Honey</p>
+              </div>
+              <span class="shade-card-price">$24</span>
+            </button>
+            <!-- Shade 7 -->
+            <button class="shade-card" data-shade-id="boardroom">
+              <div class="swatch-circle" style="background-color: #9C7D73;"></div>
+              <div class="shade-card-info">
+                <h3>Boardroom</h3>
+                <p>Cool Taupe Matte</p>
+              </div>
+              <span class="shade-card-price">$24</span>
+            </button>
+            <!-- Shade 8 -->
+            <button class="shade-card" data-shade-id="hustle">
+              <div class="swatch-circle" style="background-color: #8C5345;"></div>
+              <div class="shade-card-info">
+                <h3>Hustle</h3>
+                <p>Warm Cinnamon Sheen</p>
+              </div>
+              <span class="shade-card-price">$24</span>
+            </button>
+          </div>
+          <!-- Featured Shade Showcase View -->
+          <div class="shade-showcase" id="shade-showcase-panel">
+            <div class="showcase-visual">
+              <div class="showcase-img-frame">
+                <!-- We will use custom SVGs/CSS layers for the shade tube showcase, matching the swatch color -->
+                <div class="swatch-glow-back" id="showcase-glow"></div>
+                <div class="showcase-product-render">
+                  <!-- Minimalist glass tube representation -->
+                  <div class="lipgloss-tube">
+                    <div class="tube-cap"></div>
+                    <div class="tube-body">
+                      <div class="tube-liquid" id="showcase-liquid-fill"></div>
+                      <div class="tube-logo">trops</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-details">
+              <span class="showcase-badge" id="showcase-finish-badge">Finish: High-Gloss Glaze</span>
+              <h3 class="showcase-name" id="showcase-title">Tulum Sand</h3>
+              <p class="showcase-description" id="showcase-desc">
+                A warm sand beige with high-octane glass shine. Melts onto lips with a weightless, non-sticky feel, leaving a glossy finish that makes your lips look naturally fuller and moisturized all day.
+              </p>
+              <div class="showcase-ingredients">
+                <h4>Key Ingredients:</h4>
+                <p id="showcase-ingredients-list">Infused with cold-pressed coconut oil, sodium hyaluronate, and vitamin E.</p>
+              </div>
+              <div class="showcase-action-row">
+                <span class="showcase-price">$24.00</span>
+                <button class="btn-primary add-to-cart-btn" id="showcase-add-btn" data-shade="Tulum Sand" data-price="24.00">Add to Bag</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Formula / Performance Section -->
+    <section class="formula-section" id="formula">
+      <div class="formula-container">
+        <div class="formula-grid">
+          <div class="formula-intro-panel">
+            <span class="formula-subtitle">The Science of Wear</span>
+            <h2 class="formula-title">High Shine. Zero Stickiness.<br><span class="italic-serif">Endless Hustle.</span></h2>
+            <p class="formula-text">
+              We threw out the traditional makeup rulebook. Usually, longwear means drying mattes, and gloss means hair stuck to your lips. trops blends both into a luxurious, self-setting hybrid that cushions like a balm and shines like glass.
+            </p>
+            <div class="formula-stat">
+              <span class="stat-number">12h</span>
+              <span class="stat-label">Hydration and shine retention. Zero touch-ups needed.</span>
+            </div>
+          </div>
+          <div class="formula-features-panel">
+            <!-- Feature 1 -->
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 21a9 9 0 100-18 9 9 0 000 18z"/>
+                  <path d="M12 8v4l3 3"/>
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h3>Bulletproof Durability</h3>
+                <p>Stays pristine through morning espresso, back-to-back boardroom presentations, and late afternoon client catch-ups.</p>
+              </div>
+            </div>
+            <!-- Feature 2 -->
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h3>Skin-First Hydration</h3>
+                <p>Infused with micro-hyaluronic acid, cold-pressed coconut oil, and shea butter. Plumps and cushions lips from the inside out.</p>
+              </div>
+            </div>
+            <!-- Feature 3 -->
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                </svg>
+              </div>
+              <div class="feature-content">
+                <h3>Cruelty-Free &amp; Clean</h3>
+                <p>100% vegan, gluten-free, paraben-free, and formulated without synthetic fragrances. Pure comfort, clean confidence.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Editorial Gallery Block -->
+    <section class="editorial-section" id="editorial">
+      <div class="editorial-container">
+        <div class="editorial-grid">z
+          <!-- Item 1: Large Image -->
+          <div class="editorial-item item-large-img">
+            <img src="assets/lifestyle_tulum.png" alt="Elegant minimalist open-air beach house patio in Tulum, warm sunset light" class="editorial-img">
+            <div class="img-caption">The Tulum escape, bottled.</div>
+          </div>
+          <!-- Item 2: Quote Card -->
+          <div class="editorial-item item-quote-card-1">
+            <div class="quote-card-inner">
+              <span class="quote-tag">Our Philosophy</span>
+              <p class="quote-text">
+                "She doesn’t need a complex 12-step beauty routine. She needs one shade that works as hard as she does, and looks just as good at a beach club bar."
+              </p>
+              <span class="quote-author">&mdash; trops founders</span>
+            </div>
+          </div>
+          <!-- Item 3: Image -->
+          <div class="editorial-item item-medium-img-1">
+            <img src="assets/lifestyle_shell.png" alt="A sun-bleached coral sea shell resting on fine warm sand with palm shadows" class="editorial-img">
+          </div>
+          <!-- Item 4: Image -->
+          <div class="editorial-item item-medium-img-2">
+            <img src="assets/lifestyle_coconut.png" alt="Macro texture shot of white coconut cream smudged next to coconut husk fibers" class="editorial-img">
+          </div>
+          <!-- Item 5: Quote Card 2 -->
+          <div class="editorial-item item-quote-card-2">
+            <div class="quote-card-inner">
+              <span class="quote-tag">Formula Note</span>
+              <p class="quote-text">
+                Coconut cream hydration meets high-gloss light reflection. A recipe for lips that feel completely bare and look intensely dramatic.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Reviews Section -->
+    <section class="reviews-section" id="reviews">
+      <div class="reviews-container">
+        <div class="section-header text-center">
+          <span class="section-subtitle">Real Proof</span>
+          <h2 class="section-title">Tested in the Boardroom, Approved on the Beach</h2>
+        </div>
+        <div class="reviews-slider-wrapper">
+          <div class="reviews-track" id="reviews-track">
+            <!-- Review 1 -->
+            <div class="review-card">
+              <div class="stars">★★★★★</div>
+              <p class="review-text">
+                "I wore 'Espresso Run' for a 9 AM keynote presentation, a series of investor meetings, and dinner drinks in Austin. 12 hours later, my lips still felt hydrated and the gloss sheen was still there. No sticky residue. Unbelievable."
+              </p>
+              <div class="review-author">
+                <span class="author-name">Clara Mendéz</span>
+                <span class="author-title">Tech Venture Partner, Austin</span>
+              </div>
+            </div>
+            <!-- Review 2 -->
+            <div class="review-card">
+              <div class="stars">★★★★★</div>
+              <p class="review-text">
+                "Trops is a game-changer. Most glosses feel like glue, but this wears like a premium oil. 'Tulum Sand' is my absolute go-to. It gives my lips a plump, healthy look that fits right into my getting-ready-in-3-minutes routine."
+              </p>
+              <div class="review-author">
+                <span class="author-name">Sarah Jenkins</span>
+                <span class="author-title">Creative Director, NYC</span>
+              </div>
+            </div>
+            <!-- Review 3 -->
+            <div class="review-card">
+              <div class="stars">★★★★★</div>
+              <p class="review-text">
+                "I was skeptical about the 'boardroom to beach' claim, but I wore 'Shell' during a long day of surgery rounds, followed by an outdoor networking cocktail. Did not touch up once. My lips didn't feel dry at all at the end of the day."
+              </p>
+              <div class="review-author">
+                <span class="author-name">Dr. Nicole Patel</span>
+                <span class="author-title">Orthopedic Surgeon, Miami</span>
+              </div>
+            </div>
+          </div>
+          <!-- Slider Navigation -->
+          <div class="slider-controls">
+            <button class="control-btn prev-btn" id="prev-review-btn" aria-label="Previous review">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            <div class="slider-dots" id="slider-dots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+              <span class="dot" data-index="2"></span>
+            </div>
+            <button class="control-btn next-btn" id="next-review-btn" aria-label="Next review">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Email Capture Section -->
+    <section class="newsletter-section">
+      <div class="newsletter-container">
+        <div class="newsletter-content">
+          <span class="newsletter-subtitle">Early Access</span>
+          <h2 class="newsletter-title">Enter the Boardroom</h2>
+          <p class="newsletter-desc">
+            Subscribe for early releases, private collections, and 15% off your first shade. No spam. Just shades that keep up.
+          </p>
+          <form class="newsletter-form" id="newsletter-form" novalidate>
+            <div class="input-group">
+              <input type="email" id="newsletter-email" placeholder="Your executive email address" aria-label="Email address" required>
+              <button type="submit" class="submit-btn">
+                <span>Join Now</span>
+                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+            <span class="form-feedback-message" id="form-feedback"></span>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-brand-col">
+        <span class="footer-logo">trops</span>
+        <p class="footer-moto">Confidence in a tube. Boardroom to beach, same shade all day.</p>
+        <span class="footer-copyright">&copy; 2026 trops Cosmetics. All rights reserved.</span>
+      </div>
+      <div class="footer-links-col">
+        <h4>Explore</h4>
+        <a href="#shade-range">The Collection</a>
+        <a href="#formula">Our Science</a>
+        <a href="#editorial">Journal</a>
+      </div>
+      <div class="footer-links-col">
+        <h4>Support</h4>
+        <a href="#">Shipping &amp; Returns</a>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="footer-links-col">
+        <h4>Social</h4>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">Pinterest</a>
+      </div>
+    </div>
+  </footer>
+  <!-- Script Link -->
+  <script src="script.js"></script>
+</body>
+</html>
